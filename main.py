@@ -1,4 +1,5 @@
 # This code is from Autocorrect starter code for Code2College Elite Qualifier,https://replit.com/@jmslocum16/AutocorrectStarter#main.py
+#Used stack overflow, stackabuse, geeksforgeeks, https://www.geeksforgeeks.org/create-a-gui-to-get-domain-information-using-tkinter/?ref=rp  , https://stackoverflow.com/questions/22800401/how-to-capitalize-the-first-letter-of-every-sentence 
 
 import time
 #text
@@ -51,7 +52,7 @@ def correction() :
  
     # get a content from entry box
     input_word = word1_field.get().lower()   #I added .lower() because the autocorrect did not correct it properly if it was upper case.
-    
+  
   #print("One",input_word)
     # create a TextBlob object
     start_time = time.time()
@@ -61,16 +62,27 @@ def correction() :
     blob_obj = TextBlob(input_word)
  
     # get a corrected word
-    corrected_word = str(blob_obj.correct())
- 
+    corrected_word = str(blob_obj.correct()).capitalize() #Added .capitalize() so that it adds back the capital letter that I took out, and if there never was one, I added one to make it gramaticaly correct
+  
+    #Added this below to make each letter after a period capitalized to make it gramticaly correct.
+    sentence = corrected_word.split('.')
+    for i in sentence:
+      print (i.strip().capitalize()+". ",end='')
+    print()
+  
     # insert method inserting the
     # value in the text entry box.
     word2_field.insert(10, corrected_word)
+    #word2_field.insert(10, i.strip().capitalize()+". ",end='')
     end_time = time.time()
 
-    print(corrected_word)
+    
+    print()
     elapsed_time = end_time - start_time
     print('Corrected ' + input_word + ' in ' + f'{elapsed_time:.2f}' + ' seconds.')
+    print()
+
+  
 # Driver code
 if __name__ == "__main__" :
     
