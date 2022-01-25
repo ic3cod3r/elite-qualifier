@@ -1,5 +1,5 @@
 # This code is from Autocorrect starter code for Code2College Elite Qualifier,https://replit.com/@jmslocum16/AutocorrectStarter#main.py
-#Used stack overflow, stackabuse, geeksforgeeks, https://www.geeksforgeeks.org/create-a-gui-to-get-domain-information-using-tkinter/?ref=rp  , https://stackoverflow.com/questions/22800401/how-to-capitalize-the-first-letter-of-every-sentence 
+#Used stack overflow, stackabuse, geeksforgeeks, https://www.geeksforgeeks.org/create-first-gui-application-using-python-tkinter/ , https://stackoverflow.com/questions/22800401/how-to-capitalize-the-first-letter-of-every-sentence 
 
 #The correction will also be placed in the console, where it will allow you to copy the corrected version and post it into your document, it will also tell you the time it took to correct the word(s). The correction in the console is also a little different from the correction in the GUI window, as the correction in the console adds periods and capitalization, whilst the correction in the GUI window does not.
 
@@ -22,16 +22,16 @@ spelling_series
 #This clears both the begining text and the fixed text boxes-
 def clearAll() :
      
-    # whole content of text entry area is deleted-
+    #text entry and correction is deleted-
     word1_field.delete(0, END)
     word2_field.delete(0, END)
  
 
 
-# Function to get a corrected word-
+#Function to get a corrected word-
 def correction() :
  
-    # get a content from entry box-
+    # get the word(s) from entry box-
     input_word = word1_field.get().lower()   #I added .lower() because the autocorrect did not correct it properly if it was upper case.
 
     #Stats the timer-
